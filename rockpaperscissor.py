@@ -13,51 +13,54 @@ while game_Loop:
         if computer_choice == 1:
             print("Draw")
             computer_choice = "Rock"
-            print(computer_choice)
-            os.system("pause & cls")
         elif computer_choice == 2:
             print("Computer Wins")
             computer_score += 1
             computer_choice = "Paper"
-            print(computer_choice)
-            os.system("pause & cls")
         else:
             print("Player Wins")
             player_score += 1
             computer_choice = "Scissor"
-            os.system("pause & cls")
     elif player_choice.title() == "Paper":
         if computer_choice == 1:
             print("Player Wins")
+            player_score += 1
             computer_choice = "Rock"
-            print(computer_choice)
-            os.system("pause & cls")
         elif computer_choice == 2:
             print("Draw")
-            computer_score += 1
             computer_choice = "Paper"
-            print(computer_choice)
-            os.system("pause & cls")
         else:
             print("Computer Wins")
-            player_score += 1
+            computer_score += 1
             computer_choice = "Scissor"
-            os.system("pause & cls")
     elif player_choice.title() == "Scissor":
         if computer_choice == 1:
             print("Computer Wins")
+            computer_score += 1
             computer_choice = "Rock"
-            print(computer_choice)
-            os.system("pause & cls")
         elif computer_choice == 2:
             print("Player Wins")
-            computer_score += 1
+            player_score += 1
             computer_choice = "Paper"
-            print(computer_choice)
-            os.system("pause & cls")
         else:
             print("Draw")
             computer_choice = "Scissor"
-            os.system("pause & cls")
     else:
         print("Stupid")
+
+    print(f"Computer Chose {computer_choice}")
+    Enter = True
+
+    while Enter:
+        Input = input("Enter Q to Quit, R to Restart or Press Enter to Continue:").upper()
+        if Input == "Q":
+            game_Loop = False
+            Enter = False
+        elif Input == "R":
+            Enter = False
+            player_score = 0
+            computer_score = 0
+            os.system("cls")
+        else:
+            Enter = False
+            os.system("cls")
