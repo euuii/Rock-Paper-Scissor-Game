@@ -46,7 +46,7 @@ while game_Loop:
             print("Draw")
             computer_choice = "Scissor"
     else:
-        print("Stupid")
+        print("Invalid Input. Please try again.")
 
     print(f"Computer Chose {computer_choice}")
     Enter = True
