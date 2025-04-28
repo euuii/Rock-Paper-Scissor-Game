@@ -69,3 +69,5 @@ while game_Loop:
         else:
             Enter = False
             os.system("cls")
+
+#Fix the code for linux integration
